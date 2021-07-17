@@ -1,0 +1,10 @@
+﻿{
+    "Name": "Show Item All",
+    "Author": "La",
+    "Version": "1.0.1",
+    "Description": "Show item All",
+    "UniqueID": "La.LaItemAll",
+    "EntryDll": "LaItemAll.dll",
+    "MinimumApiVersion": "3.9.5",
+    "UpdateKeys": [ "Nexus:5" ]
+}

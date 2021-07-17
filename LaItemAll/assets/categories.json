@@ -1,0 +1,219 @@
+﻿/**
+ *
+ * 对于每个物品，如果类型与该标签匹配，则应用一个类别。如果有多个类别则使用第一个匹配项。用户界面按字母顺序显示类别
+ *
+ * 种类属性:
+ *    - Label (必须): 种类显示文本，多个规则有相同文本则会被合并到一个种类里
+ *    - When (必须): 要添加到类别中的规则
+ *    - Except: 忽视的规则
+ *
+ * 规则属性:
+ *    - Class: C#类型实例全名
+ *    - ObjCategory: 物品种类值，数字 (see https://stardewvalleywiki.com/Modding:Object_data#Categories).
+ *    - ObjType: 物品类型，字符串 (see https://stardewvalleywiki.com/Modding:Object_data).
+ *    - ItemId: 物品类型和索引值 "type:id".
+ *
+ * 其他的：全部（在顶部），杂项（在底部）
+ */
+[
+  // 装备：工具
+  {
+    "Label": "filter.equipment-tools",
+    "When": {
+      "ObjCategory": [
+        -19, // fertilizer+.
+        -21, // bait
+        -22, // tackle
+        -99 // tools
+      ],
+      "ItemId": [
+        "Object:261", // 沙漠图腾warp totem: desert
+        "Object:297", // grass starter
+        "Object:681", // rain totem
+        "Object:688", // 农场图腾warp totem: farm
+        "Object:689", // 山顶图腾warp totem: mountains
+        "Object:690" // 海滩图腾warp totem: beach
+      ]
+    },
+    "Except": {
+      "Class": [ "StardewValley.Tools.Slingshot" ] // has category -99 (tools)
+    }
+  },
+  // 装备：武器
+  {
+    "Label": "filter.equipment-weapons",
+    "When": {
+      "ObjCategory": [ -98 ],
+      "Class": [ "StardewValley.Tools.Slingshot" ],
+      "ItemId": [
+        "Object:286", // 樱桃炸弹cherry bomb
+        "Object:287", // 炸弹bomb
+        "Object:288", // 巨形炸弹mega bomb
+        "Object:441" // 爆炸弹explosive ammo
+      ]
+    }
+  },
+  // 服饰：帽子
+  {
+    "Label": "filter.equipment-hats",
+    "When": {
+      "ObjCategory": [ -95 ]
+    }
+  },
+  // 服饰：衣服
+  {
+    "Label": "filter.equipment-clothes",
+    "When": {
+      "ObjCategory": [ -100 ]
+    }
+  },
+  // 服饰：鞋子
+  {
+    "Label": "filter.equipment-boots",
+    "When": {
+      "ObjCategory": [ -97 ]
+    }
+  },
+  // 装备：戒指
+  {
+    "Label": "filter.equipment-rings",
+    "When": {
+      "ObjCategory": [ -96 ]
+    }
+  },
+  // 农场：作物
+  {
+    "Label": "filter.farm-crops",
+    "When": {
+      "ObjCategory": [
+        -75, // 蔬菜vegetables
+        -79, // 水果fruit
+        -80, // 花朵flowers
+        -81 // 植物greens
+      ],
+      "ItemId": [
+        "Object:417" // 甜宝石浆果sweet gem berry
+      ]
+    }
+  },
+  // 农场：种子
+  {
+    "Label": "filter.farm-seeds",
+    "When": {
+      "ObjCategory": [ -74 ]
+    }
+  },
+  // 农场：动物掉落物
+  {
+    "Label": "filter.farm-animal-drops",
+    "When": {
+      "ObjCategory": [
+        -5, // eggs
+        -6, // milk
+        -14, // meat
+        -17, // sell at Pierre's
+        -18, // sell at Pierre and Marnie's
+        -28 // monster loot
+      ],
+      "ItemId": [
+        "Object:413", // blue slime egg
+        "Object:437", // red slime egg
+        "Object:439", // purple slime egg
+        "Object:680" // green slime egg
+      ]
+    }
+  },
+  // 鱼类
+  {
+    "Label": "filter.fish",
+    "When": {
+      "ObjCategory": [
+        -4, // fish
+        -23 // sell at fish shop
+      ],
+      "ObjType": [ "Fish" ]
+    },
+    "Except": {
+      "ObjCategory": [ -20 ] // trash
+    }
+  },
+  // 矿石与古物
+  {
+    "Label": "filter.minerals-and-artifacts",
+    "When": {
+      "ObjCategory": [
+        -2, // gems
+        -12 // minerals
+      ],
+      "ObjType": [ "Arch" ],
+      "ItemId": [
+        "Object:535", // geode
+        "Object:536", // frozen geode
+        "Object:537", // magma geode
+        "Object:749" // omni geode
+      ]
+    }
+  },
+  // 制造：原材料
+  {
+    "Label": "filter.crafting.resources",
+    "When": {
+      "ObjCategory": [
+        -15, // metals
+        -16 // building resources
+      ]
+    }
+  },
+  // 制造：各种制品
+  {
+    "Label": "filter.crafting.products",
+    "When": {
+      "ObjCategory": [
+        -8, // crafting
+        -9 // big craftables
+      ],
+      "ItemId": [
+        "Object:710", // crab pot
+        "Object:463", // drum block
+        "Object:464" // flute block
+
+      ]
+    }
+  },
+  // 工匠物品与菜肴
+  {
+    "Label": "filter.artisan-and-cooking",
+    "When": {
+      "ObjCategory": [
+        -7, // cooking
+        -25, // ingredients
+        -26, // artisan goods
+        -27 // syrup
+      ],
+      "ItemId": [
+        "Object:245", // sugar
+        "Object:246", // wheat flour
+        "Object:247", // oil
+        "Object:403", // field snack
+        "Object:419", // vinegar
+        "Object:423" // rice
+      ]
+    }
+  },
+  // 装饰：家具
+  {
+    "Label": "filter.decor.furniture",
+    "When": {
+      "Class": [ "StardewValley.Objects.Furniture" ]
+    }
+  },
+  // 装饰：其他
+  {
+    "Label": "filter.decor.other",
+    "When": {
+      "ObjCategory": [
+        -24 //家具
+      ]
+    }
+  }
+]

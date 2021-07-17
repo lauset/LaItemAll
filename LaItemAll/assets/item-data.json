@@ -1,0 +1,11 @@
+﻿{
+  // 可能会导致游戏出错或者崩溃的物品,放置后不能移除
+  "ProblematicItems": [
+    "BigCraftable:101", // Incubator (放置后不能移除)
+    "BigCraftable:81", // Locked Door, two orientations (放置后不能移除)
+    "BigCraftable:82", // ditto
+    "BigCraftable:128", // Mushroom Box (放置后不能移除)
+    "BigCraftable:29", // Obelisk (一旦放置玩家靠近时，会有故障动画，在那之后捡起会立即导致游戏崩溃或者导致无法移动的库存物品)
+    "BigCraftable:84" // Wicked Statue, lit eyes version (放置后不能移除)
+  ]
+}
